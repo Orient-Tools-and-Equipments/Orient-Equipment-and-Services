@@ -13,15 +13,40 @@
 }
 
 html, body {
-  background-color: var(--background);
+  background-color: transparent;
   color: var(--foreground);
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
 }
 
-/* Hide scrollbar for premium look */
+/* Homepage content sections — dark frosted black */
+.heritage-bg {
+  background-color: rgb(0 0 0 / 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Even darker — transitions into solid footer */
+.pre-footer-bg {
+  background-color: rgb(0 0 0 / 0.95);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+}
+
+.footer-solid {
+  background-color: #000000;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
+
+

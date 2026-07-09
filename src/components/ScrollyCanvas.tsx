@@ -23,7 +23,6 @@ export default function ScrollyCanvas() {
     offset: ["start start", "end end"],
   });
 
-
   // Preload images
   useEffect(() => {
     const loadedImages: HTMLImageElement[] = [];
@@ -84,7 +83,7 @@ export default function ScrollyCanvas() {
         // but we can optionally force a draw here if needed.
       }
     };
-    
+
     window.addEventListener("resize", handleResize);
     handleResize(); // Initial sizing
     return () => window.removeEventListener("resize", handleResize);
@@ -103,17 +102,17 @@ export default function ScrollyCanvas() {
         // The container is relative to the viewport.
         // rect.top is 0 when the container starts touching the top of the viewport.
         // rect.top becomes negative as we scroll down.
-        const scrollStart = rect.top; 
+        const scrollStart = rect.top;
         const scrollHeight = rect.height - window.innerHeight;
-        
+
         let progress = -scrollStart / scrollHeight;
         progress = Math.max(0, Math.min(1, progress));
-        
+
         const currentFrame = Math.min(
           FRAME_COUNT - 1,
           Math.floor(progress * FRAME_COUNT)
         );
-        
+
         drawImage(currentFrame);
       }
       requestRef = requestAnimationFrame(renderLoop);
